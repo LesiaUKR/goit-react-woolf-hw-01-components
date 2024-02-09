@@ -1,9 +1,13 @@
 import { Profile } from './Profile/Profile';
 import user from '../data/user.json';
+import { Layout } from './Layout';
+import { GlobalStyle } from './Globalstyle';
+
 export const App = () => {
   return (
-    <div>
+    <Layout>
+      <GlobalStyle />
       <Profile {...user} />
-    </div>
+    </Layout>
   );
 };

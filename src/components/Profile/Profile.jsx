@@ -1,34 +1,45 @@
-export const Profile = props => {
-  const {
-    username,
-    tag,
-    location,
-    avatar,
-    stats: { followers, views, likes },
-  } = props;
-  return (
-    <div>
-      <div>
-        <img src={avatar} alt={tag} />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
-      </div>
+import {
+  Avatar,
+  Description,
+  Info,
+  Name,
+  Stat,
+  StatItem,
+  StatLabel,
+  StatValue,
+  Wrapper,
+} from './Profile.styled';
 
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
-      </ul>
-    </div>
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) => {
+  return (
+    <Wrapper>
+      <Description>
+        <Avatar src={avatar} alt={tag} />
+        <Name>{username}</Name>
+        <Info>@{tag}</Info>
+        <Info>{location}</Info>
+      </Description>
+
+      <Stat>
+        <StatItem>
+          <StatLabel>Followers</StatLabel>
+          <StatValue>{followers}</StatValue>
+        </StatItem>
+        <StatItem>
+          <StatLabel>Views</StatLabel>
+          <StatValue>{views}</StatValue>
+        </StatItem>
+        <StatItem>
+          <StatLabel>Likes</StatLabel>
+          <StatValue>{likes}</StatValue>
+        </StatItem>
+      </Stat>
+    </Wrapper>
   );
 };
