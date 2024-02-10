@@ -23,7 +23,7 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.div`
-  color: skyblue;
+  color: midnightblue;
   margin-top: 16px;
   font-weight: bold;
   font-size: 24px;
@@ -39,12 +39,14 @@ export const Info = styled.div`
 
 export const Stat = styled.ul`
   display: flex;
+  align-items: center;
+  height: 150px;
+  background-color: lightskyblue;
 `;
 
 export const StatItem = styled.li`
   flex-basis: calc(100% / 3);
   text-align: center;
-  background-color: lightskyblue;
   border: 1px solid lightskyblue;
 `;
 

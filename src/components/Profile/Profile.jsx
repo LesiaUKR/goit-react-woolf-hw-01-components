@@ -9,6 +9,10 @@ import {
   StatValue,
   Wrapper,
 } from './Profile.styled';
+import { FcLike } from 'react-icons/fc';
+import { IoEye } from 'react-icons/io5';
+import { GiShadowFollower } from 'react-icons/gi';
+import { IconContext } from 'react-icons';
 
 export const Profile = ({
   username,
@@ -28,15 +32,27 @@ export const Profile = ({
 
       <Stat>
         <StatItem>
-          <StatLabel>Followers</StatLabel>
+          <StatLabel>
+            <IconContext.Provider value={{ color: 'purple', size: '24px' }}>
+              <GiShadowFollower />
+            </IconContext.Provider>
+          </StatLabel>
           <StatValue>{followers}</StatValue>
         </StatItem>
         <StatItem>
-          <StatLabel>Views</StatLabel>
+          <StatLabel>
+            <IconContext.Provider value={{ color: 'blue', size: '24px' }}>
+              <IoEye />
+            </IconContext.Provider>
+          </StatLabel>
           <StatValue>{views}</StatValue>
         </StatItem>
         <StatItem>
-          <StatLabel>Likes</StatLabel>
+          <StatLabel>
+            <IconContext.Provider value={{ size: '24px' }}>
+              <FcLike />
+            </IconContext.Provider>
+          </StatLabel>
           <StatValue>{likes}</StatValue>
         </StatItem>
       </Stat>
